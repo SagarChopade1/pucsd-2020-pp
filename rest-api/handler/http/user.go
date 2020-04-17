@@ -27,12 +27,12 @@ func NewUserHandler(conn *sql.DB) *User {
 
 func (user *User) GetHTTPHandler() []*handler.HTTPHandler {
 	return []*handler.HTTPHandler{
-		&handler.HTTPHandler{Authenticated: true, Method: http.MethodGet, Path: "books/{id}", Func: user.GetByID},
-		&handler.HTTPHandler{Authenticated: true, Method: http.MethodPost, Path: "books", Func: user.Create},
-		&handler.HTTPHandler{Authenticated: true, Method: http.MethodPut, Path: "books/{id}", Func: user.Update},
-		&handler.HTTPHandler{Authenticated: true, Method: http.MethodDelete, Path: "books/{id}", Func: user.Delete},
-		&handler.HTTPHandler{Authenticated: true, Method: http.MethodGet, Path: "books", Func: user.GetAll},
-		///write path =books/{id}
+		&handler.HTTPHandler{Authenticated: true, Method: http.MethodGet, Path: "user/{id}", Func: user.GetByID},
+		&handler.HTTPHandler{Authenticated: true, Method: http.MethodPost, Path: "user", Func: user.Create},
+		&handler.HTTPHandler{Authenticated: true, Method: http.MethodPut, Path: "user/{id}", Func: user.Update},
+		&handler.HTTPHandler{Authenticated: true, Method: http.MethodDelete, Path: "user/{id}", Func: user.Delete},
+		&handler.HTTPHandler{Authenticated: true, Method: http.MethodGet, Path: "user", Func: user.GetAll},
+
 	}
 }
 
